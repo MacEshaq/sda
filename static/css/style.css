@@ -1,0 +1,436 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(#74cfbf, #cceff5, #74cfbf);
+}   
+
+
+
+/* bootstrap navbar customize starts here */
+
+.container-fluid .navbar-brand{
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(247, 230, 176);
+}
+.main-container{
+  width: 92%;
+  position: sticky;
+  
+  
+}
+
+.navbar{
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.bg-color{
+  background: #2393a1;
+}
+.navbar-nav .nav-item .nav-link{
+  font-size: 25px;
+  color: #ebf193;
+  font-family: 'Otomanopee One', sans-serif, Arial, Helvetica;
+}
+.navbar-nav .nav-item .nav-link:hover{ 
+  color: #f1f5df;  
+}
+.navbar-nav .nav-item .active_page{
+  color: #f1f5df;
+}
+.navbar-toggler{
+  color: #dde3f5;
+}
+.login{
+  font-size: 30px;
+  background: #74d5f0;
+  color: #6d6766;
+}
+
+.button-bg-color{
+  background-color: rgb(235, 83, 45);
+}
+
+/* bootstrap navbar customize ends here */
+
+.base-container{
+  width: 92%;
+}
+
+/* ===home page start here with grid layout=== */
+
+.index-container{
+
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  gap: 5px;
+
+ 
+ 
+}
+
+.index-container div{
+  padding: 10px;
+  border: 1px solid rgb(82, 177, 180);
+  border-radius: 5px;
+  background:rgb(216, 236, 236)
+}
+
+div[class*="img-wrapper"]{
+
+  border: none;
+  padding: 1px;
+ 
+}
+.logo{
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+#index-logo{
+  width: 150; 
+  height: 150;
+
+}
+
+.welcome{
+  grid-column-start: 2;
+  grid-column-end: 4;
+
+  font-size: 15px;
+}
+.meeting{
+  grid-column-start: 4;
+  grid-column-end: 6;
+  font-weight: bold;
+}
+.links{
+  grid-row-start: 2;
+  grid-row-end: span 2;
+
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.mompong-photos{
+  grid-row-start: 2;
+  grid-row-end: span 2;
+
+  grid-column-start: 2;
+  grid-column-end: 6;
+ 
+}
+.img-wrapper-lg {
+  padding: 0 2px;
+  float: left;
+  width: 24.99999%;
+  }
+
+
+/* ===home page end here=== */
+
+/* ===gallery starts here=== */
+.img-thumbnail{
+    height: 150px;   
+    object-fit: cover;
+}
+
+.gallery-bg-color{
+    background:rgb(216, 236, 236)   
+}
+.text-color{
+    color: rgb(43, 42, 42);
+}
+
+
+/* ===gallery ends here=== */
+
+
+/* ===Members starts here=== */
+.members-logo{
+  
+  width: 150; 
+  height: 150;
+
+}
+
+
+/* ===Members ends here=== */
+
+/* about page start here with grid Layout */
+
+
+/* about page ends here */
+
+
+/* ===registration and upload page start here=== */
+.user_card {
+  width: 350px;
+  margin-top: auto;
+  margin-bottom: auto;
+  background: #74cfbf;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+
+}
+
+.form_container {
+  margin-top: 20px;
+}
+
+#form-title{
+  color: rgb(103, 107, 107);
+}
+.login_btn {
+  width: 100%;
+  background: #33ccff !important;
+  color: white !important;
+}
+.login_btn:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.login_container {
+  padding: 0 2rem;
+}
+.input-group-text {
+  background: #f7ba5b !important;
+  color: white !important;
+  border: 0 !important;
+  border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+  box-shadow: none !important;
+  outline: 0px !important;
+}
+.p-tag p{
+  padding-top: 0;
+  margin-top: 0;
+}
+/* customize code */
+.admin_page{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.register{
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+}
+
+.upload{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  
+}
+
+.warning-message{
+  color: brown;
+}
+
+/*===registration and upload page end here===*/
+
+
+
+/* ===@media starts here=== */
+
+@media screen and (max-width: 1125px) {
+  .members-logo{
+  
+    width: 100; 
+    height: 100;
+  }
+
+  .card-header{
+    font-size: 12px;
+  }
+}
+
+/* @media screen and (min-width: 991px) {
+
+ .img-wrapper-sm{
+   display: none;
+ }
+
+} */
+
+
+@media screen and (max-width: 990px) {
+
+  /* home page start here with grid layout */
+
+.welcome{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  font-size: 13px;
+  margin: auto;
+  
+}
+
+.logo{
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  grid-row-start: 2;
+  grid-row-end: 3;
+  
+}
+#index-logo{
+  width: 100px;
+  height: 100px;
+}
+
+.meeting{
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  grid-column-start: 2;
+  grid-column-end: 4;
+  font-weight: bold;
+
+  font-size: 12px;
+
+}
+
+.links{
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  grid-column-start: 4;
+  grid-column-end: 6;
+}
+.mompong-photos{
+  grid-row-start: 3;
+  grid-row-end: span 3;
+
+  grid-column-start: 1;
+  grid-column-end: 6;
+ 
+}
+
+.meeting ul{
+  list-style: none;
+  padding-left: 1px;
+}
+
+
+/* .img-wrapper-lg{
+  display: none;
+} */
+
+/* home page end here */
+
+/* ==gallery starts here== */
+.img-thumbnail{
+  height: 50px;   
+  
+}
+
+.text-color{
+  font-size: 12px;
+}
+
+
+
+/* ==gallery ends here== */
+}
+
+@media screen and (max-width: 880px) {
+
+  /* register and upload */
+.admin_page{
+  display: grid;
+  grid-template-columns: 1fr;
+  
+}
+
+.register{
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+}
+
+.upload{
+  grid-column-start: 1;
+  grid-column-end: 2;
+
+  grid-row-start: 2;
+  grid-row-end: 2;
+ 
+}
+
+  /* register and upload ends here */
+  
+}
+
+div.img-wrapper-sm img {
+  width: 200px; 
+  height: 150px; 
+  object-fit: cover;
+}
+/* #img-wrapper{
+  width: 200px; 
+  height: 150px; 
+  object-fit: cover;
+
+} */
+
+
+@media only screen and (max-width: 900px) {
+.img-wrapper-lg {
+  width: 39.99999%;
+  margin: 2px 0;
+}
+}
+@media only screen and (max-width: 700px) {
+.img-wrapper-lg {
+  width: 49.99999%;
+  margin: 2px 0;
+}
+.member-wrapper{
+  margin-top: 5px;
+}
+}
+
+@media only screen and (max-width: 500px) {
+.img-wrapper-lg {
+  width: 100%;
+}
+
+.meeting{
+  grid-row-start: 2;
+  grid-row-end: 2;
+
+  grid-column-start: 2;
+  grid-column-end: 6;
+  font-weight: bold;
+
+  font-size: 12px;
+
+}
+
+.links{
+display: none;
+}
+
+
+}
+
+.clearfix:after {
+content: "";
+display: table;
+clear: both;
+}
+
+
+/* @media ends here */

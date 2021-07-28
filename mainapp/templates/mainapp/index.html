@@ -1,0 +1,107 @@
+<title>Home</title>
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content%}
+
+
+
+<div class="container-fluid index-container">
+
+    <div class="logo text-center">
+        
+        <figure>
+            <a href="{% static 'images/SDA-logo.png' %}" data-lightbox="sda-logo" data-title="SDA Logo">
+                <img src="{% static 'images/SDA-logo.png' %}"  alt='missing' id="index-logo"/>
+            </a>
+            <figcaption>SDA Logo</figcaption>
+        </figure>
+    </div>
+
+    <div class="welcome fst-italic">
+        <p class="fs-6 fw-bold">How we started...</p>
+        <p class="fw-light">
+        Sometime ago, a simple family gathering was organized only to catch up with everyone's life. While the casual hanging out was taking place a group of cousins on their get together chitchat came up on idea that started this association. See About page to know more SDA.<br>  -Sometimes life takes you to unexpected turn in the right direction-
+      </p>
+    </div>
+
+    <div class="meeting">
+        
+            <p class="text-center">Incoming Meeting <br>
+                <span class="text-center" style="color: rgb(238, 59, 113);">(example bu inya meeting)</span></p>
+            
+                <ul class="style-list-none">
+                   
+                <li>Agenda: <span class="fw-light fst-italic">{{meetingSched.agenda}}</span></li>
+                <li>When: <span class="fw-light fst-italic">{{ meetingSched.when }}</span></li>
+                <li>Where: <span class="fw-light fst-italic">{{ meetingSched.where }}</span></li>
+          
+                  
+                </ul>
+
+           
+            
+        
+    </div>
+    
+    <div class="links">
+        <div class="card">
+           
+              <h5 class="text-center">Links</h5>
+            
+            <ul class="list-group list-group-flush fw-normal">
+                <li class="list-group-item">
+                    <a class="text-decoration-none fst-italic text-color" href="https://bangsamoro.gov.ph/category/news/latest-news/" target="_blank">
+                        Bangsamoro News
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="text-decoration-none fst-italic text-color" href="https://facebook.com" target="_blank">
+                        Facebook
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="text-decoration-none fst-italic text-color" href="https://instagram.com" target="_blank">
+                        Instagram
+                    </a>
+                </li>
+                <li class="list-group-item">
+                    <a class="text-decoration-none fst-italic text-color" href="https://twitter.com" target="_blank">
+                        Twitter
+                    </a>
+                </li>
+             
+            </ul>
+          </div>
+    </div>
+
+        <div class="container-fluid text-center mompong-photos">
+            <h5>Mompong Photos</h5>
+            <span class="row">
+                {% for photo in allImage %}
+                    {% if photo.album.name == 'Mompong Photos' %}
+
+                    <div class="img-wrapper-lg">
+                        <div class="img-wrapper-sm">
+                          <a href="{{ photo.image.url }}"  data-lightbox="mompong-photos" data-title="Mompong, DBS, Maguindanao">
+                            <img src="{{ photo.image.url }}" alt="No photo">
+                          </a>
+                        </div>
+                      </div>
+                   
+ 
+                    {% endif %}
+            
+                {% endfor %}
+                
+
+                <p style="font-size: 11px; font-style: italic; text-align: end; padding-right: 26px;" >Photography by: Naguib Salik</p>  
+
+            </span>
+                        
+        </div>
+
+          
+
+</div>
+
+{% endblock %}

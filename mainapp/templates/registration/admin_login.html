@@ -1,0 +1,48 @@
+<title>Login</title>
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+{% load static %}
+
+<h5 style="text-align: center; color: brown; margin-top: 20px;">Log in as Admin</h5>
+   
+    {% if form.errors %}
+    <p class="text-center fw-bold text-danger">Incorrect Username or Password!</p>
+    {% endif %}
+
+    <div class="container mt-3">
+		<div class="d-flex justify-content-center">
+			<div class="user_card">
+				<div class="d-flex justify-content-center">
+					<h3 class="mt-2" id="form-title">Login here</h3>
+				</div>
+				<div class="d-flex justify-content-center form_container p-tag">
+
+					<form method="POST" action="{% url 'login' %}">
+						{% csrf_token %}
+
+                        <span>{{form.username.label}}</span>
+                        <p>{{form.username}}</p>
+
+                        <span>{{form.password.label}}</span>
+                        <p>{{form.password}}</p>
+
+                        <input class="btn login_btn mb-3" type="submit" value="Login">
+                        <input type="hidden" name="next" value="{{ next }}">
+            
+					</form>
+        
+          {% for message in messages %}
+          <p style="text-align: center;">{{message}}</p>
+          {% endfor %}
+          
+				</div>
+        
+          
+			</div>
+		</div>
+	</div>
+
+  <!-- <p style="text-align: center; color: brown; margin-top: 20px;">Member without an account. Click<a href="{% url 'about' %}"> here</a> to  contact admin for you registration</p> -->
+
+{% endblock %}

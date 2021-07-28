@@ -1,0 +1,71 @@
+<title>Gallery</title>
+
+
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+
+
+{% load static %}
+
+<div class="container-fluid gallery-main-wrapper">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card album-name">
+                <div class="card-header fw-bold text-center">
+                  Album Name
+                </div>
+                <ul class="list-group list-group-flush fw-normal">
+                    <li class="list-group-item">
+                        <a class="text-decoration-none fst-italic text-color" href="{% url 'gallery' %}">
+                            All
+                        </a>
+                    </li>
+
+                    {% for album in allAlbum %}
+                        {% if album.name == 'Officers' %}
+                        {{ pass }}
+
+                        {% elif album.name == 'Member List' %}
+                        {{ pass }}
+
+                        {% else %}
+                        <li class="list-group-item py-1">
+                            <a class="text-decoration-none fst-italic text-color" href="{% url 'gallery' %}?album={{ album.name }}">
+                                {{ album.name }}
+                            </a>
+                        </li>
+                        {% endif %}
+                    {% endfor %} 
+                 
+                </ul>
+              </div>
+        </div>
+        <div class="col-md-10 gallery-bg-color">
+
+            <h4 class="text-center">{{albumName}}</h4>
+            
+            <div class="row">
+                {% for image in allImage %}
+                    {% if image.album.name != 'Member List' %}
+                        <div class="col-sm-2 text-center gallery-img-wrapper-lg">
+                            
+                            <a href="{{ image.image.url }}" data-lightbox="All" data-title="{{ image.album.name }}">
+                                <img src="{{ image.image.url }}" class="img-thumbnail" alt="...">
+                            </a>    
+                        </div>
+
+                    {% endif %}
+                {% endfor %} 
+
+            </div>
+            
+        </div>
+        <!-- =================================== -->
+        
+        <!-- ============================= -->
+    </div>
+
+</div>
+
+{% endblock %}

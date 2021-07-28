@@ -1,0 +1,36 @@
+<title>Report</title>
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+{% load static %}  
+
+<style>
+  .font-size{
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+</style>
+
+<div class="container">
+  <div class="row justify-content-center">
+    {% for report in allReport %}
+    
+    <div class="col-sm-2">
+      <div class="card">
+        <p class="text-center font-size">{{ report.title }}</p>
+        <img src="{{ report.file.url }}" class="img-thumbnail report-gallery" alt="...">
+      
+      <a href="{% url 'view_report' report.id %}" class="btn btn-dark btn-sm m-1">View Report</a>
+        
+      </div>
+      
+
+    </div>
+    {% endfor %}
+    
+  </div>
+</div>
+ 
+
+  
+{% endblock %}

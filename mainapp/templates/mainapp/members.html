@@ -1,0 +1,93 @@
+<title>About</title>
+
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+{% load static %}
+<style>
+    .img-thumbnail{
+
+        height: 120px;
+        
+        object-fit: cover;
+
+    }
+
+    .about-bg-color{
+        background:rgb(216, 236, 236)
+        
+    }
+
+    .card-text{
+        text-transform: capitalize;
+        font-size: small;
+    }
+</style>
+
+<!-- ======================================= -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2">
+            <div class="card">
+                <div class="card-header fw-bold text-center">
+                  SDA Logo
+                  <img src="{% static 'images/SDA-logo.png' %}"  alt='missing' class="members-logo"/>
+                </div>
+                {% if user.is_authenticated %}
+                <ul class="list-group list-group-flush text-center">
+                    <!-- register here is temporary only -->
+                    <li class="list-group-item text-danger text-center fw-bold pt-5 pb-0">Admin User Only
+                        <li  class="list-group-item">
+                            <a class="btn btn-warning fw-bold btn-sm m-1 text-decoration-none" href="{% url 'admin_user' %}">Register and Upload</a>
+                        </li>
+                        
+                    </li>
+                </ul>
+                {% else %}
+                {{pass}}
+                
+                
+                {% endif %}
+
+                <!-- you stopped here is user auth added -->
+            </div>
+        </div>
+        
+        <div class="col-md-10 card about-bg-color member-wrapper">
+            <h4 class="text-center mt-1 fst-italic text-decoration-underline" style="color: rgb(68, 64, 64);">Meet the SDA officers</h4>
+            <div class="row mb-3">
+                {% for officer in officer_list %}
+                <div class="col-sm-2 p-1">
+                    <div class="card">
+                        <img src="{{ officer.image.url }}" class="img-thumbnail" alt="...">
+                        <div class="card-body text-center py-0">
+                            <p class="card-text my-0 fw-bold">{{ officer.position }}</p>
+                            <p class="card-text my-0 fst-italic">{{officer.first_name}} {{officer.last_name}}</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                {% empty %}
+                <h3>No photo....</h3>
+                {% endfor %} 
+
+            </div>
+                    
+                    {% for image in allImage %}
+                        {% if image.album.name == 'Member List' %}
+                            <img src="{{ image.image.url }}" alt="">
+                        
+                        {% endif %}
+                    {% endfor %}
+            
+        
+            
+        </div>
+    </div>
+   
+    
+    
+
+</div>
+
+{% endblock %}

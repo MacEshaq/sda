@@ -1,0 +1,30 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+
+{% load static %}
+
+<style>
+  .img-view{
+    width: 75%;
+    align-items: center;
+  }
+</style>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <a class="btn btn-dark my-3" href="{% url 'report' %}">Back to Report</a>
+          <p class="my-1 fw-bold text-dark text-decoration-underline">{{ file.title }}</p>
+        <div>
+          <img class="img-view" src="{{ file.file.url }}" alt="">
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+{% endblock %}
+
+<!-- this serves as the viewer of the report as separate page -->

@@ -1,0 +1,96 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content%}
+
+{% load static %}
+
+
+<h4 class="m-0 text-center warning-message">This is only for Admin user</h4>
+<div class="container-fluid admin_page">
+
+        <!-- ================account registration=================== -->
+        <div class="container register mt-3">
+          <div class="d-flex justify-content-center">
+            <div class="user_card">
+              <div class="d-flex justify-content-center">
+                <h3 class="my-1" id="form-title">REGISTER ACCOUNT</h3>
+              </div>
+              <div class="d-flex justify-content-center form_container p-tag">
+        
+                <form method="POST" action="{% url 'admin_user' %}">
+                  {% csrf_token %}
+        
+                  <span>{{form.first_name.label}}</span>
+                  <p class="mb-1">{{form.first_name}}</p>
+        
+                  <span>{{form.last_name.label}}</span>
+                  <p class="mb-1">{{form.last_name}}</p>
+        
+                  <span>{{form.username.label}}</span>
+                  <p class="mb-1">{{form.username}}</p>
+        
+                  <span>{{form.password1.label}}</span>
+                  <p class="mb-1">{{form.password1}}</p>
+        
+                  <span>{{form.password2.label}}</span>
+                  <p class="mb-1">{{form.password2}}</p>
+        
+                  <button class="btn btn-primary mx-5 mt-2" type="submit">Register</button>
+        
+                </form>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+        
+        <!-- ================Uplaoding photos=================== -->
+        <div class="container upload mt-3">
+          <div class="d-flex justify-content-center">
+            <div class="user_card">
+              <div class="d-flex justify-content-center">
+                <h3 class="mt-2" id="form-title">Upload Photos</h3>
+              </div>
+              <div class="d-flex justify-content-center form_container p-tag">
+        
+                <form action="" method="POST">  
+                  {% csrf_token %}
+                  <div class="form-group m-3">
+                    <label for="">Select Album Name</label>
+                    <select required name="album" class="form-control" name="album">
+                      <option value="none">Select Album...</option>
+        
+                      {% for album in allAlbum %}
+        
+                      <option value="{{album.id}}">{{album.name}}</option>
+        
+                      {% endfor %}
+                    </select>
+        
+                  </div>
+        
+                  <div class="form-group m-3">
+                    <label for="">Create New Album</label>
+                    <input name="new_album" type="text" placeholder="Type New Album Name" class="form-control">
+                  </div>
+        
+                  <div class="form-group m-3">
+                    <label for="">Upload Image</label>
+                    <input required name="image" type="file" class="form-control-file">
+                  </div>
+        
+                  <button type="submit" class="btn btn-primary text-center mx-4">Submit</button>
+        
+                </form>
+
+                </form>
+              </div>
+          
+            </div>
+          </div>
+        </div>
+
+</div>
+
+
+{% endblock %}
